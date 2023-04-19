@@ -455,7 +455,7 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -2016,6 +2016,10 @@ body {
     -o-transition: all 0.6s ease-in-out;
     transition: all 0.6s ease-in-out;
     border-radius: 0 0 15% 15%;
+  }
+
+  .header {
+    position: fixed;
   }
 
   .header.sticky .menu__body::after {
