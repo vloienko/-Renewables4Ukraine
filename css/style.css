@@ -763,6 +763,7 @@ body {
 
 .screen__box {
   text-align: center;
+  margin-bottom: -200px;
 }
 
 .screen__text {
@@ -780,6 +781,20 @@ body {
   font-size: 80px;
   line-height: 100px;
   margin-bottom: 52px;
+  -webkit-transform: translate(0px, 120%);
+      -ms-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease-in-out 0.6s;
+  -o-transition: all 0.8s ease-in-out 0.6s;
+  transition: all 0.8s ease-in-out 0.6s;
+}
+
+.screen__title._active {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .screen__title span {
@@ -845,11 +860,14 @@ body {
 
 .screen__scroll {
   font-weight: 400;
-  margin-bottom: 18px;
+  padding: 90px;
+  margin-bottom: 26px;
+  -webkit-transform: translate(0px, 50%);
+      -ms-transform: translate(0px, 50%);
+          transform: translate(0px, 50%);
   position: relative;
-}
-
-.screen__scroll::after {
+  width: 300px;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -859,12 +877,117 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.screen__scroll::after,
+.screen__scroll::before {
   position: absolute;
-  content: url("../img/home/screen/scroll-down.svg");
+  content: "";
+  border: 2.5px dotted #fff;
+  border-radius: 50%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  -webkit-animation-name: rotation-left;
+          animation-name: rotation-left;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.screen__scroll::after {
+  border-bottom: none;
+  border-right: none;
+}
+
+.screen__scroll::before {
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  width: 240px;
+  height: 240px;
+  top: 10%;
+  left: 10%;
+  border-top: none;
+  border-left: none;
+}
+
+.screen__scroll span {
+  position: relative;
+}
+
+.screen__scroll span::after {
+  position: absolute;
+  content: "";
+  border: 2.5px dotted #fff;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  top: -195%;
+  left: -170%;
+  right: 0;
+  bottom: 0;
+  -webkit-animation-name: rotation-left;
+          animation-name: rotation-left;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  border-top: none;
+  border-right: none;
+}
+
+@-webkit-keyframes rotation-left {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotation-left {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .screen .container {
@@ -2219,6 +2342,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     max-width: 360px;
+    margin-bottom: -300px;
   }
 
   .screen__text br {
