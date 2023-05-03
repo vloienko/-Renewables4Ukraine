@@ -863,6 +863,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
 }
 
 .screen__scroll::after,
@@ -883,6 +884,7 @@ body {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+  overflow: hidden;
 }
 
 .screen__scroll::after {
@@ -926,6 +928,7 @@ body {
           animation-timing-function: linear;
   border-top: none;
   border-right: none;
+  overflow: hidden;
 }
 
 @-webkit-keyframes rotation-left {
@@ -1778,6 +1781,12 @@ body {
 
   .container-small {
     max-width: 1270px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .contact-form__parallax-clouds {
+    bottom: 0%;
   }
 }
 
